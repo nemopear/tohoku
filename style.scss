@@ -1,0 +1,166 @@
+@import "font";
+// Base
+html { height: 100%;}
+
+body {
+	font-family: "Thonburi","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	color: #484848;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li { 
+	list-style: none;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+	&:hover, &:focus, &:active {
+		text-decoration: underline;
+		color: #333;
+	}
+}
+
+.hide-text { 
+	display: inline-block;
+	text-indent: -999em;
+}
+
+.table { display: table;}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+.center {
+	text-align: center;
+}
+
+.border-box {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.pull-right { float: right;}
+
+.wrapper {
+	width: 995px;
+	margin: 0 auto;
+}
+
+.all-animate {
+	animation: all 5s ease-in;
+	-webkit-animation: all 5s ease-in;
+	-moz-animation: all 5s ease-in;
+}
+
+.arrow-right { position: relative;}
+.arrow-right:after {
+	content: '\00a0';
+	border-left: 5px solid #979797;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 8px;
+	margin-left: 8px;
+}
+
+// not front html
+.not-front {
+	.header { overflow: hidden; margin-bottom: 80px;}
+	.logo { float: left;}
+	.wrapper { padding: 30px 0;}
+}
+
+// Menu
+.main-menu {
+	float: right;
+	ul li {
+		display: inline-block;
+		margin-left: 20px;
+	}
+}
+
+// Index html
+
+.page-index {
+	background-color: #000;
+	height: 100%;
+	.wrapper {
+		background: url(images/all-item.png) no-repeat 0 bottom;
+		min-height: 790px;
+		height: 100%;
+	}
+}
+
+.logo-table { 
+	padding-bottom: 370px; 
+	height: 100%; 
+	width: 100%;
+}
+
+.btn-enter {
+	text-transform: uppercase;
+	border: 1px solid #484848;
+	color: #484848;
+	padding: 15px;
+	min-width: 255px;
+	display: inline-block;
+	margin-top: 10px;
+	&:hover, &:focus, &:active {
+		border: 1px solid #fff;
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+// Main html
+.tohoku-item-list {
+	li {
+		width: 33%;
+		text-align: center;
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+	li a { display: inline-block;}
+	.item-img { 
+		height: 218px;
+		vertical-align: bottom;
+		display: table-cell;
+	}
+
+}
+
+.item-text { font-size: 11px;}
+
+.basket-item a { position: relative; width: 188px;}
+.basket-item img {
+	position: absolute;
+	bottom: -35px;
+	right: 0;
+	z-index: -1;
+}
+
+.artist-item {
+	a {
+		width: 156px;
+		height: 156px;
+		border-radius: 80px;
+		background-color: #000;
+	}
+	.text-artist { 
+		color: #fff;
+		height: 156px;
+		width: 156px;
+	}
+	.arrow-right:after { top: 38px;}
+}

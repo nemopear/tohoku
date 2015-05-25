@@ -1,2 +1,1 @@
 # tohoku
-html css bootstrap
