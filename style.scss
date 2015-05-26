@@ -21,7 +21,7 @@ ul li {
 a {
 	color: #333;
 	text-decoration: none;
-	&:hover, &:focus, &:active {
+	&:hover, &:focus, &.active {
 		text-decoration: underline;
 		color: #333;
 	}
@@ -48,7 +48,8 @@ a {
 }
 
 .pull-right { float: right;}
-
+.pull-left { float: left;}
+.clear { clear: both;}
 .wrapper {
 	width: 995px;
 	margin: 0 auto;
@@ -74,6 +75,17 @@ a {
 	margin-left: 8px;
 }
 
+.img-text {
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.paragraph-section {
+	margin-bottom: 65px;
+	overflow: hidden;
+}
+
+.one-col { width: 420px;}
 // not front html
 .not-front {
 	.header { overflow: hidden; margin-bottom: 80px;}
@@ -88,6 +100,7 @@ a {
 		display: inline-block;
 		margin-left: 20px;
 	}
+	ul li.active a { text-decoration: underline;}
 }
 
 // Index html
@@ -125,6 +138,7 @@ a {
 
 // Main html
 .tohoku-item-list {
+	margin-bottom: 60px;
 	li {
 		width: 33%;
 		text-align: center;
@@ -163,4 +177,100 @@ a {
 		width: 156px;
 	}
 	.arrow-right:after { top: 38px;}
+}
+
+// Intro Page
+.p2-home { width: 625px;}
+.p3-home { width: 255px;}
+.hanmaki-doll-text {
+	padding: 0 27px;
+}
+.hanmaki-doll { width: 255px; text-align: center;}
+
+// Artist
+.list-artist-info > li { display: none;}
+.list-artist-info > li.show { display: block;}
+
+.p1-artist { width: 420px;}
+.tohoku-mingei { margin-left: 115px;}
+.p2-artist { width: 900px;}
+
+// Handicraft 
+.bg-handicraft {
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.bg-basket {
+	background-position: right -80px;
+	background-image: url(images/basket-weaving.png);
+}
+
+.list-img-handicraft .img-handicraft {
+	float: left;
+	margin-left: 5px;
+	&.first { margin: 0;}
+}
+
+.slider-wrapper {
+	position: relative;
+}
+
+.slider{
+	margin-top: 80px;
+	position: relative;
+	padding: 0 0 50px;
+	width:360px;
+	height: 240px;
+}
+
+.arrows {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.slide{
+	position:absolute;
+	top:0;
+	left:0;
+}
+ 
+.slide.ng-hide-add, .slide.ng-hide-remove {
+	-webkit-transition:all linear 0.5s;
+	-moz-transition:all linear 0.5s;
+	-o-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+	display:block!important;
+}
+ 
+.slide.ng-hide-add.ng-hide-add-active,.slide.ng-hide-remove {
+	opacity:0;
+}
+ 
+.slide.ng-hide-add,.slide.ng-hide-remove.ng-hide-remove-active {
+	opacity:1;
+}
+
+.ico-slide-ctrl {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	background: url(images/slide-ctrl.png) no-repeat 0 0;
+	&:hover {
+		background-position: 0 -40px;
+	}
+}
+
+.ico-next {
+	background-position: -40px 0;
+	margin-left: 10px;
+	&:hover {
+		background-position: -40px -40px;
+	}
+}
+
+.image-current {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }

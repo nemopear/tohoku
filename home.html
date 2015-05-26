@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Tohoku</title>
+<html lang="en" ng-app="tohoku">
+<head>
+	<!-- <base href="/"> -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Tohoku</title>
+	<link href="style.css" rel="stylesheet">
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+</head>
 
-		<!-- Bootstrap -->
-		<!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
-		<link href="style.css" rel="stylesheet">
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
 	<body class="not-front">
 		<div class="wrapper">
 			<div class="header">
@@ -31,89 +26,36 @@
 
 					<nav class="main-menu navbar navbar-default th-sarabun middle">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="home.html">หน้าแรก</a></li>
-								<li><a href="#">บทนำ</a></li>
-								<li><a href="#">ศิลปินกลุ่มมินเงอิ</a></li>
-								<li><a href="#">ศิลปหัตถกรรมแห่งโทโฮขุ</a></li>
-								<li><a href="#">ภาพนิทรรศการ</a></li>
+								<li ui-sref-active="active">
+									<a ui-sref="home">หน้าแรก</a>
+								</li>
+								<li ui-sref-active="active">
+									<a ui-sref="intro">บทนำ</a>
+								</li>
+								<li ui-sref-active="active">
+									<a ui-sref="activity">การเคลื่อนไหวของศิลปินกลุ่มมินเงอิ</a>
+								</li>
+								<li ui-sref-active="active">
+									<a ui-sref="artist">ศิลปินกลุ่มมินเงอิ</a>
+								</li>
+								<li ui-sref-active="active">
+									<a ui-sref="handicraft">ศิลปหัตถกรรมแห่งโทโฮขุ</a>
+								</li>
+								<li ui-sref-active="active">
+									<a ui-sref="gallery">ภาพนิทรรศการ</a>
+								</li>
 							</ul>
 					</nav>
 			</div>
 
 			<div class="content-wrapper">
-				<h2>“ศิลปหัตถกรรมอันงดงามแห่งโทโฮขุญี่ปุ่น”</h2>
-				<p>
-					เป็นนิทรรศการที่จัดขึ้นเพื่อระลึกถึงโอกาสครบรอบเหตุการณ์แผ่นดินไหวและสึนามิที่เกิดขึ้นที่โทโฮขุเมื่อวันที่ 11 มีนาคม 2554 ซึ่งทำให้ภูมิภาคโทโฮขุที่ขึ้นชื่อด้านความงดงามของเทือกเขา ทิวทัศน์ท้องทะเลและอุดมไปด้วยวัฒนธรรมท้องถิ่นและประวัติศาสตร์ ได้รับความเสียหายและถูกทำลายเป็นวงกว้างอย่างไม่เคยเกิดขึ้นมาก่อน เกิดความสูญเสียอย่างใหญ่หลวง วัฒนธรรมด้านศิลปหัตถกรรมและการผลิตได้รับผลกระทบอย่างรุนแรง ผู้คนท้องถิ่นต่างได้รับผลกระทบจากภัยธรรมชาติในครั้งนั้น ทว่าพวกเขาได้ร่วมมือร่วมใจทำงานร่วมกันอย่างใกล้ชิด เพื่อสรรสร้างและมุ่งมั่นสร้างความสงบและความปกติสุขให้กลับคืนมาสู่ชีวิตของพวกเขาให้เร็วที่สุดเท่าที่จะทำได้
-				</p>
-				<p>
-					นิทรรศการนี้ชวนให้เราระลึกถึงมรดกทางศิลปะและหัตถกรรมอันเป็นเอกลักษณ์อันดึงดูดของโทโฮขุอีกครั้ง การจัดแสดงผลงานนานาประเภท เช่น เครื่องเคลือบ เครื่องเขิน สิ่งทอ งานโลหะ งานหัตถกรรมจากไม้ และไม้ไผ่ จะทำให้ผู้เข้าชมเพลิดเพลินไปกับความหลากหลายและโลกอันวิจิตรบรรจงของประเพณีแบบโทโฮขุ
-				</p>
-				<ul class="tohoku-item-list item">
-					<li class="table">
-						<a href="#" title="เครื่องเขิน">
-							<div class="item-img"><img src="images/01.png" style="width: 145px; height: 218px;" alt="เครื่องเขิน"/></div>
-							<div class="item-text arrow-right">เครื่องเขิน</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="ภาชนะดินเผา">
-							<div class="item-img"><img src="images/02.png" style="width: 108px; height: 204px;" alt="ภาชนะดินเผา"/></div>
-							<div class="item-text arrow-right">ภาชนะดินเผา</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="การปักผ้า">
-							<div class="item-img"><img src="images/03.png" style="width: 212px; height: 157px;" alt="การปักผ้า"/></div>
-							<div class="item-text arrow-right">การปักผ้า</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="การมัดย้อมและการทอผ้า">
-							<div class="item-img"><img src="images/04.png" style="width: 165px; height: 129px;" alt="การมัดย้อมและการทอผ้า"/></div>
-							<div class="item-text arrow-right">การมัดย้อมและการทอผ้า</div>
-						</a>
-					</li>
-					<li class="basket-item">
-						<a href="#" title="การสานตะกร้า">
-							<div class="item-img"><img src="images/05.png" style="width: 188px; height: 230px;" alt="การสานตะกร้า"/></div>
-							<div class="item-text arrow-right">การสานตะกร้า</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="การตัดผ้าและเปลือกไม้">
-							<div class="item-img"><img src="images/06.png" style="width: 89px; height: 163px;" alt="การตัดผ้าและเปลือกไม้"/></div>
-							<div class="item-text arrow-right">การตัดผ้าและเปลือกไม้</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="การหลอมเหล็ก">
-							<div class="item-img"><img src="images/07.png" style="width: 120px; height: 155px;" alt="การหลอมเหล็ก"/></div>
-							<div class="item-text arrow-right">การหลอมเหล็ก</div>
-						</a>
-					</li>
-					<li>
-						<a href="#" title="การวาดระบายสี">
-							<div class="item-img"><img src="images/08.png" style="width: 84px; height: 183px;" alt="การวาดระบายสี"/></div>
-							<div class="item-text arrow-right">การวาดระบายสี</div>
-						</a>
-					</li>
-					<li class="artist-item">
-						<a href="#" title="ศิลปินกลุ่มมินเงอิ" class="table">
-								<div class="middle th-sarabun-bold text-artist "><span class="arrow-right">ศิลปิน<br />กลุ่มมินเงอิ</span></div>
-						</a>
-					</li>
-				</ul>
-
-				<p>ผลงานที่รวมอยู่ในนิทรรศการนี้เสนอโอกาสที่จะค้นพบเทคนิคชั้นสูงทางด้านศิลปหัตถกรรมแบบดั้งเดิมที่ฟูมฟักกันมาในภูมิภาคโทโฮขุ และความงามของอุปกรณ์เครื่องใช้สอยในชีวิตประจำวันที่ใช้กันมาในญี่ปุ่นตั้งแต่อดีตกาลอีกครั้ง ผลงานศิลปหัตกรรมเหล่านี้จะช่วยให้เราเข้าใจภูมิปัญญาชาวบ้านที่ได้มาจากการใช้ชีวิตอย่างใกล้ชิดกับธรรมชาติ ทักษะฝีมือ และความชำนาญที่พัฒนาขึ้นจากภูมิปัญญาเหล่านั้นได้มากยิ่งขึ้น</p>
-
-				<p>เราใคร่ขอแสดงความขอบคุณจากใจไปยัง คุณริวอิจิ มัตทซึบาระ หัวหน้าภัณฑารักษ์ของงานนิทรรศการ รวมทั้งผู้คนทั้งหลายที่ให้คำแนะนำและความร่วมมืออันทรงคุณค่ายิ่ง เราขอถือโอกาสนี้แสดงความขอบคุณไปยังข้อความและความช่วยเหลืออันอบอุ่น และให้กำลังใจที่มาจากต่างประเทศอันเนื่องมาจากภัยพิบัติแผ่นดินไหว</p>
-
-				<p>ความเป็นจริงยังคงหนักหน่วงในหลากหลายพื้นที่ของภูมิภาคนี้ ทำให้ยังมีผู้คนอาศัยอยู่ในศูนย์อพยพและตามสถานที่ต่างๆ อันห่างไกลไปจากบ้านเดิมของเขา เรายังทำงานร่วมกับผู้คนของภูมิภาคโทโฮขุต่อไป และให้การสนับสนุนความพยายามที่จะสร้างพื้นที่ให้ฟื้นคืนดังเดิมให้เร็วที่สุดเท่าที่เป็นไปได้</p>
+				<div ui-view></div>
 			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
 	</body>
 </html>

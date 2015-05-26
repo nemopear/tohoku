@@ -27,7 +27,8 @@
 
 h1, h2 {
   font-family: 'th_sarabun_newbold',Thonburi, Helvetica, sans-serif;
-  font-weight: 100; }
+  font-weight: 100;
+  padding-left: 2px; }
 
 h1 {
   font-size: 34px; }
@@ -54,7 +55,7 @@ ul li {
 a {
   color: #333;
   text-decoration: none; }
-  a:hover, a:focus, a:active {
+  a:hover, a:focus, a.active {
     text-decoration: underline;
     color: #333; }
 
@@ -80,6 +81,12 @@ a {
 .pull-right {
   float: right; }
 
+.pull-left {
+  float: left; }
+
+.clear {
+  clear: both; }
+
 .wrapper {
   width: 995px;
   margin: 0 auto; }
@@ -104,6 +111,17 @@ a {
   top: 8px;
   margin-left: 8px; }
 
+.img-text {
+  font-size: 11px;
+  line-height: 14px; }
+
+.paragraph-section {
+  margin-bottom: 65px;
+  overflow: hidden; }
+
+.one-col {
+  width: 420px; }
+
 .not-front .header {
   overflow: hidden;
   margin-bottom: 80px; }
@@ -117,6 +135,8 @@ a {
   .main-menu ul li {
     display: inline-block;
     margin-left: 20px; }
+  .main-menu ul li.active a {
+    text-decoration: underline; }
 
 .page-index {
   background-color: #000;
@@ -144,17 +164,19 @@ a {
     color: #fff;
     text-decoration: none; }
 
-.tohoku-item-list li {
-  width: 33%;
-  text-align: center;
-  display: inline-block;
-  margin-bottom: 20px; }
-.tohoku-item-list li a {
-  display: inline-block; }
-.tohoku-item-list .item-img {
-  height: 218px;
-  vertical-align: bottom;
-  display: table-cell; }
+.tohoku-item-list {
+  margin-bottom: 60px; }
+  .tohoku-item-list li {
+    width: 33%;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 20px; }
+  .tohoku-item-list li a {
+    display: inline-block; }
+  .tohoku-item-list .item-img {
+    height: 218px;
+    vertical-align: bottom;
+    display: table-cell; }
 
 .item-text {
   font-size: 11px; }
@@ -180,5 +202,99 @@ a {
   width: 156px; }
 .artist-item .arrow-right:after {
   top: 38px; }
+
+.p2-home {
+  width: 625px; }
+
+.p3-home {
+  width: 255px; }
+
+.hanmaki-doll-text {
+  padding: 0 27px; }
+
+.hanmaki-doll {
+  width: 255px;
+  text-align: center; }
+
+.list-artist-info > li {
+  display: none; }
+
+.list-artist-info > li.show {
+  display: block; }
+
+.p1-artist {
+  width: 420px; }
+
+.tohoku-mingei {
+  margin-left: 115px; }
+
+.p2-artist {
+  width: 900px; }
+
+.bg-handicraft {
+  background-repeat: no-repeat;
+  background-position: right bottom; }
+
+.bg-basket {
+  background-position: right -80px;
+  background-image: url(images/basket-weaving.png); }
+
+.list-img-handicraft .img-handicraft {
+  float: left;
+  margin-left: 5px; }
+  .list-img-handicraft .img-handicraft.first {
+    margin: 0; }
+
+.slider-wrapper {
+  position: relative; }
+
+.slider {
+  margin-top: 80px;
+  position: relative;
+  padding: 0 0 50px;
+  width: 360px;
+  height: 240px; }
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.slide.ng-hide-add, .slide.ng-hide-remove {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  display: block !important; }
+
+.slide.ng-hide-add.ng-hide-add-active, .slide.ng-hide-remove {
+  opacity: 0; }
+
+.slide.ng-hide-add, .slide.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1; }
+
+.ico-slide-ctrl {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: url(images/slide-ctrl.png) no-repeat 0 0; }
+  .ico-slide-ctrl:hover {
+    background-position: 0 -40px; }
+
+.ico-next {
+  background-position: -40px 0;
+  margin-left: 10px; }
+  .ico-next:hover {
+    background-position: -40px -40px; }
+
+.image-current {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
 
 /*# sourceMappingURL=style.css.map */
