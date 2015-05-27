@@ -231,6 +231,12 @@ a {
 .p2-artist {
   width: 900px; }
 
+.artist-name {
+  display: inline-block;
+  margin-right: 60px; }
+  .artist-name.last {
+    margin-right: 0; }
+
 .bg-handicraft {
   background-repeat: no-repeat;
   background-position: right bottom; }

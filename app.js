@@ -11,35 +11,35 @@ angular
 	  $stateProvider
 	    .state('home', {
 	      url: "/home",
-	      templateUrl: "patials/list-tohoku.html"
+	      templateUrl: "partials/list-tohoku.html"
 	    })
 	    .state('intro', {
 	      url: "/intro",
-	      templateUrl: "patials/intro.html",
+	      templateUrl: "partials/intro.html",
 	    })
 	    .state('activity', {
 	      url: "/activity",
-	      templateUrl: "patials/activity.html"
+	      templateUrl: "partials/activity.html"
 	    })
 	    .state('artist', {
 	    	url: "/artist",
-	    	templateUrl: "patials/artist.html"
+	    	templateUrl: "partials/artist.html"
 	    })
 	    .state('artist.shiko-munakata', {
 	    	url: "/shiko-munakata",
-	    	template: ""
+	    	templateUrl: "partials/artists/shiko-munakata.html"
 	    })
 	    .state('artist.keisuke-serizawa', {
 	    	url: "/keisuke-serizawa",
-	    	template: ""
+	    	templateUrl: "partials/artists/keisuke-serizawa.html"
 	    })
 	    .state('artist.shoji-hamada', {
-	    	url: "/keisuke-serizawa",
-	    	template: ""
+	    	url: "/shoji-hamada",
+	    	templateUrl: "partials/artists/shoji-hamada.html"
 	    })
 	    .state('artist.kanjiro-kawai', {
-	    	url: "/keisuke-serizawa",
-	    	template: ""
+	    	url: "/kanjiro-kawai",
+	    	templateUrl: "partials/artists/kanjiro-kawai.html"
 	    });
 	})
 	// .controller('TabsCtrl',TabsCtrl);

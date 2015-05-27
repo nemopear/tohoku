@@ -194,6 +194,11 @@ a {
 .p1-artist { width: 420px;}
 .tohoku-mingei { margin-left: 115px;}
 .p2-artist { width: 900px;}
+.artist-name {
+	display: inline-block;
+	margin-right: 60px;
+	&.last { margin-right: 0;}
+}
 
 // Handicraft 
 .bg-handicraft {
