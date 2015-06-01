@@ -27,22 +27,50 @@
 					<nav class="main-menu navbar navbar-default th-sarabun middle">
 							<ul class="nav navbar-nav navbar-right">
 								<li ui-sref-active="active">
-									<a ui-sref="home">หน้าแรก</a>
+									<a ui-sref="home">หน้าแรก<span class="menu-en">Home</span></a>
 								</li>
 								<li ui-sref-active="active">
-									<a ui-sref="intro">บทนำ</a>
+									<a ui-sref="intro">บทนำ<span class="menu-en">Forword</span></a>
+								</li>
+								<li class="menu-artist has-submenu arrow-bottom" ng-class="{ 'active': $state.includes('artist') }" >
+									<a>ศิลปินกลุ่มมินเงอิ<span class="menu-en">Tohoku and the Mingei<br />Movement Artists</span></a>
+									<ul class="submenu">
+										<li ui-sref-active="active">
+											<a ui-sref="artist.movement">การเคลื่อนไหวของศิลปินกลุ่มมินเงอิ<span class="menu-en">Tohoku and the Mingei<br />Movement Artists</span></a>
+										</li>
+										<li ng-class="{ 'active': $state.includes('artist.ctrl-artist') }">
+											<a ui-sref="artist.ctrl-artist.shiko-munakata">ศิลปินกลุ่มมินเงอิ<span class="menu-en">The Mingei Movement Artists</span></a>
+										</li>
+									</ul>
+								</li>
+								<li ui-sref-active="active" class="arrow-bottom has-submenu">
+									<a ui-sref="handicrafts">ศิลปหัตถกรรมแห่งโทโฮขุ<span class="menu-en">Beautiful Handicrafts<br />of Tohoku</span></a>
+									<ul class="submenu">
+										<li>
+											<a>การสานตะกร้า<span class="menu-en">Basket Weaving</span></a>
+										</li>
+										<li>
+											<a>การทำภาชนะดินเผา<span class="menu-en">Blunging</span></a>
+										</li>
+										<li>
+											<a>การปักผ้า, การมัดย้อมและการทอผ้า<span class="menu-en">Embroidery stitching / Dyeing / Weaving</span></a>
+										</li>
+										<li>
+											<a>การหลอมเหล์ก<span class="menu-en">Casting</span></a>
+										</li>
+										<li>
+											<a>การดัดไม้และเปลือกไม้<span class="menu-en">Bent Woodwork and <br />Bark Craftsmanship</span></a>
+										</li>
+										<li>
+											<a>การทำเครื่องเขินหรืองานรัก<span class="menu-en">Lacquering</span></a>
+										</li>
+										<li>
+											<a>การวาดระบายสี<span class="menu-en">Painting</span></a>
+										</li>
+									</ul>
 								</li>
 								<li ui-sref-active="active">
-									<a ui-sref="activity">การเคลื่อนไหวของศิลปินกลุ่มมินเงอิ</a>
-								</li>
-								<li ui-sref-active="active">
-									<a ui-sref="artist">ศิลปินกลุ่มมินเงอิ</a>
-								</li>
-								<li ui-sref-active="active">
-									<a ui-sref="handicraft">ศิลปหัตถกรรมแห่งโทโฮขุ</a>
-								</li>
-								<li ui-sref-active="active">
-									<a ui-sref="gallery">ภาพนิทรรศการ</a>
+									<a ui-sref="gallery">ภาพนิทรรศการ<span class="menu-en">Gallery</span></a>
 								</li>
 							</ul>
 					</nav>
@@ -50,6 +78,32 @@
 
 			<div class="content-wrapper">
 				<div ui-view></div>
+			</div>
+		</div>
+		<div class="footer center">
+			<div class="wrapper">
+				<ul>
+					<li class="table">
+						<a href="#" target="_blank" class="middle">
+							<img src="images/logo-japan-foundation.png">
+						</a>
+					</li>
+					<li class="table">
+						<a href="#" target="_blank" class="middle">
+							<img src="images/logo-japan.png">
+						</a>
+					</li>
+					<li class="table">
+						<a href="#" target="_blank" class="middle">
+							<img src="images/logo-tcdc.png">
+						</a>
+					</li>
+					<li class="table">
+						<a href="#" target="_blank" class="middle">
+							<img src="images/logo-cmu.png">
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

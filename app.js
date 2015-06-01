@@ -1,11 +1,14 @@
 angular
 	.module('tohoku',['ngAnimate','ui.router'])
+	.controller('SearchCtrl', function ($scope) { })
+	.controller('SummaryCtrl', function ($scope) { })
 	.config(
 	
 	function($stateProvider, $urlRouterProvider) {
 	  //
 	  // For any unmatched url, redirect to /state1
 	  $urlRouterProvider.otherwise("/home");
+	  // $urlRouterProvider.when('/artist','partials/artists/shiko-munakata.html');
 	  //
 	  // Now set up the states
 	  $stateProvider
@@ -17,30 +20,43 @@ angular
 	      url: "/intro",
 	      templateUrl: "partials/intro.html",
 	    })
-	    .state('activity', {
-	      url: "/activity",
-	      templateUrl: "partials/activity.html"
-	    })
 	    .state('artist', {
-	    	url: "/artist",
+	    	url: "/artists",
 	    	templateUrl: "partials/artist.html"
 	    })
-	    .state('artist.shiko-munakata', {
-	    	url: "/shiko-munakata",
-	    	templateUrl: "partials/artists/shiko-munakata.html"
-	    })
-	    .state('artist.keisuke-serizawa', {
-	    	url: "/keisuke-serizawa",
-	    	templateUrl: "partials/artists/keisuke-serizawa.html"
-	    })
-	    .state('artist.shoji-hamada', {
-	    	url: "/shoji-hamada",
-	    	templateUrl: "partials/artists/shoji-hamada.html"
-	    })
-	    .state('artist.kanjiro-kawai', {
-	    	url: "/kanjiro-kawai",
-	    	templateUrl: "partials/artists/kanjiro-kawai.html"
+		    .state('artist.movement', {
+		      url: "/movement",
+		      templateUrl: "partials/movement.html"
+		    })
+		    .state('artist.ctrl-artist', {
+		    	// abstract: true,
+		      url: "/ctrl-artist",
+		      templateUrl: "partials/artists/ctrl-artist.html"
+		    })
+		    .state('artist.ctrl-artist.shiko-munakata', {
+		    	url: "/shiko-munakata",
+		    	templateUrl: "partials/artists/shiko-munakata.html"
+		    })
+		    .state('artist.ctrl-artist.keisuke-serizawa', {
+		    	url: "/keisuke-serizawa",
+		    	templateUrl: "partials/artists/keisuke-serizawa.html"
+		    })
+		    .state('artist.ctrl-artist.shoji-hamada', {
+		    	url: "/shoji-hamada",
+		    	templateUrl: "partials/artists/shoji-hamada.html"
+		    })
+		    .state('artist.ctrl-artist.kanjiro-kawai', {
+		    	url: "/kanjiro-kawai",
+		    	templateUrl: "partials/artists/kanjiro-kawai.html"
+		    })
+	    .state('handicrafts', {
+	    	url: "/handicrafts",
+	    	templateUrl: "partials/handicrafts.html"
 	    });
+
+	})
+	.run(function($rootScope, $state) {
+		$rootScope.$state = $state;
 	})
 	// .controller('TabsCtrl',TabsCtrl);
 
@@ -148,34 +164,34 @@ angular
 // 		});
 // }
 
-function NavController() {
-	this.homeActive  = true;
-	this.introActive = false;
-	this.artistActive = false;
-	this.artActive = false;
-	this.galleryActive = false;
+// function NavController() {
+// 	this.homeActive  = true;
+// 	this.introActive = false;
+// 	this.artistActive = false;
+// 	this.artActive = false;
+// 	this.galleryActive = false;
 
 
-	this.activate = function(menuActive) {
-		this.homeActive  = false;
-		this.introActive = false;
-		this.artistActive = false;
-		this.artActive = false;
-		this.galleryActive = false;
+// 	this.activate = function(menuActive) {
+// 		this.homeActive  = false;
+// 		this.introActive = false;
+// 		this.artistActive = false;
+// 		this.artActive = false;
+// 		this.galleryActive = false;
 
-		if ( menuActive === 'home') {
-			this.homeActive = true;
-		} else if ( menuActive === 'intro') {
-			this.introActive = true;
-		} else if ( menuActive === 'activity') {
-			this.activityActive = true;
-		} else if ( menuActive === 'art') {
-			this.artActive = true;
-		} else if ( menuActive === 'gallery') {
-			this.galleryActive = true;
-		}
-	};
-}
+// 		if ( menuActive === 'home') {
+// 			this.homeActive = true;
+// 		} else if ( menuActive === 'intro') {
+// 			this.introActive = true;
+// 		} else if ( menuActive === 'activity') {
+// 			this.activityActive = true;
+// 		} else if ( menuActive === 'art') {
+// 			this.artActive = true;
+// 		} else if ( menuActive === 'gallery') {
+// 			this.galleryActive = true;
+// 		}
+// 	};
+// }
 
 
 

@@ -1,84 +1,5 @@
 @import "font";
-// Base
-html { height: 100%;}
-
-body {
-	font-family: "Thonburi","Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 22px;
-	color: #484848;
-}
-
-ul {
-	margin: 0;
-	padding: 0;
-}
-
-ul li { 
-	list-style: none;
-}
-
-a {
-	color: #333;
-	text-decoration: none;
-	&:hover, &:focus, &.active {
-		text-decoration: underline;
-		color: #333;
-	}
-}
-
-.hide-text { 
-	display: inline-block;
-	text-indent: -999em;
-}
-
-.table { display: table;}
-.middle {
-	display: table-cell;
-	vertical-align: middle;
-}
-.center {
-	text-align: center;
-}
-
-.border-box {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-.pull-right { float: right;}
-.pull-left { float: left;}
-.clear { clear: both;}
-.wrapper {
-	width: 995px;
-	margin: 0 auto;
-}
-
-.all-animate {
-	animation: all 5s ease-in;
-	-webkit-animation: all 5s ease-in;
-	-moz-animation: all 5s ease-in;
-}
-
-.arrow-right { position: relative;}
-.arrow-right:after {
-	content: '\00a0';
-	border-left: 5px solid #979797;
-	border-top: 4px solid transparent;
-	border-bottom: 4px solid transparent;
-	display: inline-block;
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 8px;
-	margin-left: 8px;
-}
-
-.img-text {
-	font-size: 11px;
-	line-height: 14px;
-}
+@import "base";
 
 .paragraph-section {
 	margin-bottom: 65px;
@@ -86,9 +7,10 @@ a {
 }
 
 .one-col { width: 420px;}
+
 // not front html
 .not-front {
-	.header { overflow: hidden; margin-bottom: 80px;}
+	// .header { overflow: hidden; margin-bottom: 80px;}
 	.logo { float: left;}
 	.wrapper { padding: 30px 0;}
 }
@@ -96,11 +18,88 @@ a {
 // Menu
 .main-menu {
 	float: right;
-	ul li {
+	width: 720px;
+	> ul > li {
 		display: inline-block;
-		margin-left: 20px;
+		margin: 0 20px;
+		float: left;
+		text-align: center;
+		position: relative;
+		&:hover {
+			.submenu { display: block;}
+		}
 	}
-	ul li.active a { text-decoration: underline;}
+	> ul > li > a { font-size: 24px;}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+		&:active, &:focus { text-decoration: none;}
+	}
+	ul li.active a { 
+		@extend .th-sarabun-bold;
+		// text-decoration: underline;
+	}
+}
+
+.menu-en {
+	font-size: 18px;
+	line-height: 18px;
+	text-align: center;
+	display: block;
+	margin-top: 5px;
+}
+
+.submenu {
+	position: absolute;
+	width: 250px;
+	background-color: #efefef;
+	top: 85px;
+	display: none;
+	box-shadow: 0px 0px 3px 0 #ccc;
+	li { text-align: left;}
+	li a { 
+		@extend .th-sarabun-bold;
+		@extend .border-box;
+		font-size: 21px;
+		line-height: 24px;
+		padding: 15px;
+		display: inline-block;
+		width: 100%;
+	}
+	li a .menu-en { 
+		@extend .th-sarabun;
+		font-size: 18px; 
+		line-height: 17px;
+		margin: 0;
+		color: #666;
+	}
+	.menu-en { text-align: left;}
+}
+
+.submenu li a {
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+		background-color: #000;
+		color: #fff;
+		.menu-en { color: #999;}
+	}
+}
+
+.submenu li.active a {
+	text-decoration: none;
+	background-color: #000;
+	color: #fff;
+	.menu-en { color: #999;}
+}
+
+.has-submenu {
+	padding-bottom: 20px;
+}
+
+.menu-artist.arrow-bottom:after {
+	left: 60px;
+	margin: 0;
 }
 
 // Index html
@@ -133,6 +132,17 @@ a {
 		border: 1px solid #fff;
 		color: #fff;
 		text-decoration: none;
+	}
+}
+
+// Footer
+.footer {
+	margin-top: 50px;
+	background-color: #000;
+	ul li {
+		display: inline-block;
+		margin-right: 65px;
+		height: 50px;
 	}
 }
 
@@ -198,7 +208,62 @@ a {
 	display: inline-block;
 	margin-right: 60px;
 	&.last { margin-right: 0;}
+	a:hover { text-decoration: none;}
 }
+
+// artist active / non active
+.artist-list {
+	border-bottom: 1px solid #c7c7c7;
+	margin-bottom: 90px;
+}
+
+.artist-name {
+	padding-bottom: 35px;
+	position: relative;
+	.name { 
+		color: #d8d8d8;
+		margin-top: 40px;
+		font-size: 24px;
+	}
+	img { opacity: 0.4;}
+}
+
+.artist-name a {
+	&:hover, &.active, &:focus, &:active {
+		text-decoration: none;
+		color: #333;
+		.name { color: #333; text-decoration: none;}
+		img { opacity: 1;}	
+	}
+}
+
+.artist-name.active a {
+	img { opacity: 1;}
+	.name { color: #333; text-decoration: none;}
+}
+
+.arrow-active-wrapper {
+	width: 100%;
+	height: 16px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	display: none;
+}
+
+.arrow-active {
+	width: 27px;
+	height: 14px;
+	display: inline-block;
+	background: #fff url(../images/arrow-active.png) no-repeat left top ;
+}
+
+.artist-name.active {
+	.arrow-active-wrapper { display: block;}
+}
+
+.artist-content { min-height: 500px;}
 
 // Handicraft 
 .bg-handicraft {
@@ -214,46 +279,6 @@ a {
 	float: left;
 	margin-left: 5px;
 	&.first { margin: 0;}
-}
-
-.slider-wrapper {
-	position: relative;
-}
-
-.slider{
-	margin-top: 80px;
-	position: relative;
-	padding: 0 0 50px;
-	width:360px;
-	height: 240px;
-}
-
-.arrows {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-
-.slide{
-	position:absolute;
-	top:0;
-	left:0;
-}
- 
-.slide.ng-hide-add, .slide.ng-hide-remove {
-	-webkit-transition:all linear 0.5s;
-	-moz-transition:all linear 0.5s;
-	-o-transition:all linear 0.5s;
-	transition:all linear 0.5s;
-	display:block!important;
-}
- 
-.slide.ng-hide-add.ng-hide-add-active,.slide.ng-hide-remove {
-	opacity:0;
-}
- 
-.slide.ng-hide-add,.slide.ng-hide-remove.ng-hide-remove-active {
-	opacity:1;
 }
 
 .ico-slide-ctrl {
@@ -274,8 +299,8 @@ a {
 	}
 }
 
-.image-current {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
+// .image-current {
+// 	position: absolute;
+// 	bottom: 0;
+// 	right: 0;
+// }
