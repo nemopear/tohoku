@@ -10,7 +10,7 @@
   src: url("fonts/thsarabunnew_regular.eot?#iefix") format("embedded-opentype"), url("fonts/thsarabunnew_regular.woff") format("woff"), url("fonts/thsarabunnew_regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-.th-sarabun-bold, .main-menu ul li.active a, .submenu li a {
+.th-sarabun-bold, .main-menu ul li.active a, .main-menu ul li.active .no-link, .submenu li a {
   font-family: 'th_sarabun_newbold',Thonburi, Helvetica, sans-serif;
   font-weight: 100; }
 
@@ -30,7 +30,8 @@ h1 {
   font-size: 34px; }
 
 h2 {
-  font-size: 31px; }
+  font-size: 31px;
+  line-height: 35px; }
 
 html {
   height: 100%; }
@@ -56,11 +57,14 @@ a {
     text-decoration: underline;
     color: #333; }
 
+p {
+  margin: 1.7em 0; }
+
 .header {
   position: relative;
   z-index: 9; }
 
-.hide-text {
+.hide-text, .slick-prev, .slick-next {
   display: inline-block;
   text-indent: -999em; }
 
@@ -89,12 +93,12 @@ a {
   clear: both; }
 
 .wrapper {
-  width: 995px;
+  width: 1020px;
   margin: 0 auto; }
 
 .content-wrapper {
   overflow: hidden;
-  width: 960px;
+  width: 1020px;
   margin: 190px auto 0; }
 
 .all-animate {
@@ -114,8 +118,8 @@ a {
   width: 0;
   height: 0;
   position: absolute;
-  top: 8px;
-  margin-left: 8px; }
+  top: 15px;
+  margin-left: 22px; }
 
 .arrow-bottom:after {
   content: '\00a0';
@@ -138,12 +142,136 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; }
 
+.slider-wrapper {
+  position: relative; }
+
+.slider {
+  margin-top: 80px;
+  position: relative;
+  padding: 0 0 50px;
+  width: 360px;
+  height: 240px; }
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.slide.ng-hide-add, .slide.ng-hide-remove {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  display: block !important; }
+
+.slide.ng-hide-add.ng-hide-add-active, .slide.ng-hide-remove {
+  opacity: 0; }
+
+.slide.ng-hide-add, .slide.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1; }
+
+.slick-slider {
+  width: 360px; }
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.slick-list:focus {
+  outline: none; }
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block; }
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: ''; }
+
+.slick-track:after {
+  clear: both; }
+
+.slick-loading .slick-track {
+  visibility: hidden; }
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px; }
+
+[dir='rtl'] .slick-slide {
+  float: right; }
+
+.slick-slide img {
+  display: block; }
+
+.slick-slide.slick-loading img {
+  display: none; }
+
+.slick-slide.dragging img {
+  pointer-events: none; }
+
+.slick-initialized .slick-slide {
+  display: block; }
+
+.slick-loading .slick-slide {
+  visibility: hidden; }
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent; }
+
 .paragraph-section {
   margin-bottom: 65px;
   overflow: hidden; }
 
 .one-col {
   width: 420px; }
+
+.col-wrapper {
+  overflow: hidden;
+  margin-bottom: 50px; }
 
 .not-front .logo {
   float: left; }
@@ -161,7 +289,7 @@ a {
     position: relative; }
     .main-menu > ul > li:hover .submenu {
       display: block; }
-  .main-menu > ul > li > a {
+  .main-menu > ul > li > a, .main-menu .no-link {
     font-size: 24px; }
   .main-menu a:hover {
     text-decoration: underline; }
@@ -223,7 +351,9 @@ a {
   background-color: #000;
   height: 100%; }
   .page-index .wrapper {
-    background: url(images/all-item.png) no-repeat 0 bottom;
+    width: 1473px; }
+  .page-index .index-wrapper .header {
+    background: url(images/all-item.png) no-repeat center bottom;
     min-height: 790px;
     height: 100%; }
 
@@ -252,6 +382,8 @@ a {
     display: inline-block;
     margin-right: 65px;
     height: 50px; }
+  .footer ul li.logo-last {
+    margin: 0; }
 
 .tohoku-item-list {
   margin-bottom: 60px; }
@@ -264,11 +396,14 @@ a {
     display: inline-block; }
   .tohoku-item-list .item-img {
     height: 218px;
+    width: 218px;
     vertical-align: bottom;
     display: table-cell; }
 
 .item-text {
-  font-size: 11px; }
+  font-size: 11px;
+  line-height: 18px;
+  margin-top: 15px; }
 
 .basket-item a {
   position: relative;
@@ -304,6 +439,9 @@ a {
 .hanmaki-doll {
   width: 255px;
   text-align: center; }
+
+.tohoku-map {
+  margin: 50px 0 30px 70px; }
 
 .list-artist-info > li {
   display: none; }
@@ -392,18 +530,25 @@ a {
   .list-img-handicraft .img-handicraft.first {
     margin: 0; }
 
-.ico-slide-ctrl {
+.slick-prev, .slick-next {
+  border: 0;
+  box-shadow: 0;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  cursor: pointer; }
+
+.ico-slide-ctrl, .slick-prev, .slick-next {
   display: inline-block;
   width: 28px;
   height: 28px;
   background: url(images/slide-ctrl.png) no-repeat 0 0; }
-  .ico-slide-ctrl:hover {
+  .ico-slide-ctrl:hover, .slick-prev:hover, .slick-next:hover {
     background-position: 0 -40px; }
 
-.ico-next {
+.ico-next, .slick-next {
   background-position: -40px 0;
   margin-left: 10px; }
-  .ico-next:hover {
+  .ico-next:hover, .slick-next:hover {
     background-position: -40px -40px; }
 
 /*# sourceMappingURL=style.css.map */

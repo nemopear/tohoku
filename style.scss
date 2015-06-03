@@ -1,5 +1,6 @@
 @import "font";
 @import "base";
+@import "components";
 
 .paragraph-section {
 	margin-bottom: 65px;
@@ -7,7 +8,7 @@
 }
 
 .one-col { width: 420px;}
-
+.col-wrapper { overflow: hidden; margin-bottom: 50px;}
 // not front html
 .not-front {
 	// .header { overflow: hidden; margin-bottom: 80px;}
@@ -29,14 +30,14 @@
 			.submenu { display: block;}
 		}
 	}
-	> ul > li > a { font-size: 24px;}
+	> ul > li > a,.no-link { font-size: 24px;}
 	a {
 		&:hover {
 			text-decoration: underline;
 		}
 		&:active, &:focus { text-decoration: none;}
 	}
-	ul li.active a { 
+	ul li.active a, ul li.active .no-link { 
 		@extend .th-sarabun-bold;
 		// text-decoration: underline;
 	}
@@ -107,8 +108,9 @@
 .page-index {
 	background-color: #000;
 	height: 100%;
-	.wrapper {
-		background: url(images/all-item.png) no-repeat 0 bottom;
+	.wrapper { width: 1473px;}
+	.index-wrapper .header {
+		background: url(images/all-item.png) no-repeat center bottom;
 		min-height: 790px;
 		height: 100%;
 	}
@@ -144,6 +146,7 @@
 		margin-right: 65px;
 		height: 50px;
 	}
+	ul li.logo-last { margin: 0;}
 }
 
 // Main html
@@ -158,13 +161,18 @@
 	li a { display: inline-block;}
 	.item-img { 
 		height: 218px;
+		width: 218px;
 		vertical-align: bottom;
 		display: table-cell;
 	}
 
 }
 
-.item-text { font-size: 11px;}
+.item-text { 
+	font-size: 11px; 
+	line-height: 18px;
+	margin-top: 15px;
+}
 
 .basket-item a { position: relative; width: 188px;}
 .basket-item img {
@@ -196,6 +204,9 @@
 	padding: 0 27px;
 }
 .hanmaki-doll { width: 255px; text-align: center;}
+.tohoku-map {
+	margin: 50px 0 30px 70px;
+}
 
 // Artist
 .list-artist-info > li { display: none;}
@@ -281,7 +292,16 @@
 	&.first { margin: 0;}
 }
 
-.ico-slide-ctrl {
+.slick-prev, .slick-next {
+	border: 0;
+	box-shadow: 0;
+	margin-top: 10px;
+  -webkit-appearance: none;
+  cursor: pointer;
+	@extend .hide-text;
+}
+
+.ico-slide-ctrl, .slick-prev, .slick-next {
 	display: inline-block;
 	width: 28px;
 	height: 28px;
@@ -291,16 +311,10 @@
 	}
 }
 
-.ico-next {
+.ico-next, .slick-next {
 	background-position: -40px 0;
 	margin-left: 10px;
 	&:hover {
 		background-position: -40px -40px;
 	}
 }
-
-// .image-current {
-// 	position: absolute;
-// 	bottom: 0;
-// 	right: 0;
-// }

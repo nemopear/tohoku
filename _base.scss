@@ -26,6 +26,8 @@ a {
 	}
 }
 
+p { margin: 1.7em 0;}
+
 .header {
 	position: relative;
 	z-index: 9;
@@ -55,13 +57,14 @@ a {
 .pull-left { float: left;}
 .clear { clear: both;}
 .wrapper {
-	width: 995px;
+	// width: 995px;
+	width: 1020px;
 	margin: 0 auto;
 }
 
 .content-wrapper {
 	overflow: hidden;
-	width: 960px;
+	width: 1020px;
 	margin: 190px auto 0;
 }
 
@@ -81,8 +84,8 @@ a {
 	width: 0;
 	height: 0;
 	position: absolute;
-	top: 8px;
-	margin-left: 8px;
+	top: 15px;
+	margin-left: 22px;
 }
 
 .arrow-bottom:after {

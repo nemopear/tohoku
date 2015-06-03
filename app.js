@@ -1,5 +1,5 @@
 angular
-	.module('tohoku',['ngAnimate','ui.router'])
+	.module('tohoku',['ngAnimate','ui.router','slick'])
 	.controller('SearchCtrl', function ($scope) { })
 	.controller('SummaryCtrl', function ($scope) { })
 	.config(
@@ -16,9 +16,9 @@ angular
 	      url: "/home",
 	      templateUrl: "partials/list-tohoku.html"
 	    })
-	    .state('intro', {
-	      url: "/intro",
-	      templateUrl: "partials/intro.html",
+	    .state('foreward', {
+	      url: "/foreward",
+	      templateUrl: "partials/foreward.html",
 	    })
 	    .state('artist', {
 	    	url: "/artists",
@@ -28,31 +28,60 @@ angular
 		      url: "/movement",
 		      templateUrl: "partials/movement.html"
 		    })
-		    .state('artist.ctrl-artist', {
+		    .state('artist.mingei', {
 		    	// abstract: true,
-		      url: "/ctrl-artist",
-		      templateUrl: "partials/artists/ctrl-artist.html"
+		      url: "/mingei",
+		      templateUrl: "partials/artists/mingei.html"
 		    })
-		    .state('artist.ctrl-artist.shiko-munakata', {
+		    .state('artist.mingei.shiko-munakata', {
 		    	url: "/shiko-munakata",
 		    	templateUrl: "partials/artists/shiko-munakata.html"
 		    })
-		    .state('artist.ctrl-artist.keisuke-serizawa', {
+		    .state('artist.mingei.keisuke-serizawa', {
 		    	url: "/keisuke-serizawa",
 		    	templateUrl: "partials/artists/keisuke-serizawa.html"
 		    })
-		    .state('artist.ctrl-artist.shoji-hamada', {
+		    .state('artist.mingei.shoji-hamada', {
 		    	url: "/shoji-hamada",
 		    	templateUrl: "partials/artists/shoji-hamada.html"
 		    })
-		    .state('artist.ctrl-artist.kanjiro-kawai', {
+		    .state('artist.mingei.kanjiro-kawai', {
 		    	url: "/kanjiro-kawai",
 		    	templateUrl: "partials/artists/kanjiro-kawai.html"
 		    })
 	    .state('handicrafts', {
+	    	abstract: true,
 	    	url: "/handicrafts",
 	    	templateUrl: "partials/handicrafts.html"
-	    });
+	    })
+	    	.state('handicrafts.basket-weaving', {
+	    		url: "/basket-weaving",
+	    		templateUrl: "partials/handicrafts/basket-weaving.html"
+	    	})
+	    	.state('handicrafts.blunging', {
+	    		url: "/blunging",
+	    		templateUrl: "partials/handicrafts/blunging.html"
+	    	})
+	    	.state('handicrafts.stitching', {
+	    		url: "/stiching",
+	    		templateUrl: "partials/handicrafts/stitching.html"
+	    	})
+	    	.state('handicrafts.casting', {
+	    		url: "/casting",
+	    		templateUrl: "partials/handicrafts/casting.html"
+	    	})
+	    	.state('handicrafts.woodwork', {
+	    		url: "/woodwork",
+	    		templateUrl: "partials/handicrafts/woodwork.html"
+	    	})
+	    	.state('handicrafts.lacquering', {
+	    		url: "/lacquering",
+	    		templateUrl: "partials/handicrafts/lacquering.html"
+	    	})
+	    	.state('handicrafts.painting', {
+	    		url: "/painting",
+	    		templateUrl: "partials/handicrafts/painting.html"
+	    	});
 
 	})
 	.run(function($rootScope, $state) {
