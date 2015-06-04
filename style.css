@@ -98,8 +98,8 @@ p {
 
 .content-wrapper {
   overflow: hidden;
-  width: 1020px;
-  margin: 190px auto 0; }
+  width: 965px;
+  margin: 190px 0 0; }
 
 .all-animate {
   animation: all 5s ease-in;
@@ -144,7 +144,7 @@ p {
 
 .slider-wrapper {
   position: relative;
-  margin-top: 80px; }
+  margin: 0 0px 50px 70px; }
 
 .slider {
   position: relative;
@@ -208,7 +208,8 @@ p {
   width: 960px;
   height: 640px;
   position: absolute;
-  top: 0; }
+  top: 0;
+  z-index: 9; }
 
 .flexslider {
   position: relative; }
@@ -219,13 +220,14 @@ p {
   text-indent: -999em;
   display: inline-block;
   position: absolute;
-  top: 300px; }
+  top: 0; }
 
 .flex-prev {
-  background: url(../images/flex-prev.png) no-repeat center center; }
+  background: rgba(0, 0, 0, 0.07) url(../images/flex-prev.png) no-repeat center center; }
 
 .flex-next {
-  background: url(../images/flex-next.png) no-repeat center center; }
+  background: url(../images/flex-next.png) no-repeat center center;
+  right: 0; }
 
 .paragraph-section {
   margin-bottom: 65px;
@@ -316,14 +318,16 @@ p {
   background-color: #000;
   height: 100%; }
   .page-index .wrapper {
-    width: 1473px; }
+    width: 1245px; }
   .page-index .index-wrapper .header {
     background: url(images/all-item.png) no-repeat center bottom;
-    min-height: 790px;
+    min-height: 730px;
     height: 100%; }
+  .page-index .footer {
+    margin-bottom: 50px; }
 
 .logo-table {
-  padding-bottom: 370px;
+  padding-bottom: 270px;
   height: 100%;
   width: 100%; }
 
@@ -473,7 +477,7 @@ p {
   width: 27px;
   height: 14px;
   display: inline-block;
-  background: #fff url(../images/arrow-active.png) no-repeat left top; }
+  background: #fff url(images/arrow-active.png) no-repeat left top; }
 
 .artist-name.active .arrow-active-wrapper {
   display: block; }
