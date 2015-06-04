@@ -1,5 +1,5 @@
 angular
-	.module('tohoku',['ngAnimate','ui.router','slick'])
+	.module('tohoku',['ngAnimate','ui.router','angular-flexslider'])
 	.controller('SearchCtrl', function ($scope) { })
 	.controller('SummaryCtrl', function ($scope) { })
 	.config(
@@ -81,12 +81,58 @@ angular
 	    	.state('handicrafts.painting', {
 	    		url: "/painting",
 	    		templateUrl: "partials/handicrafts/painting.html"
-	    	});
+	    	})
+	    .state('gallery', {
+	    	url: "/gallery",
+	    	templateUrl: "partials/gallery.html"
+	    });
 
 	})
 	.run(function($rootScope, $state) {
 		$rootScope.$state = $state;
 	})
+
+	.controller('BasicSliderCtrl', function($scope, $timeout) {
+		$scope.slides = [
+			'images/gallery/photos/01.jpg',
+			'images/gallery/photos/05.jpg',
+			'images/gallery/photos/06.jpg',
+			'images/gallery/photos/07.jpg',
+			'images/gallery/photos/08.jpg',
+			'images/gallery/photos/09.jpg',
+			'images/gallery/photos/010.jpg',
+			'images/gallery/photos/011.jpg',
+			'images/gallery/photos/012.jpg',
+			'images/gallery/photos/013.jpg',
+			'images/gallery/photos/014.jpg',
+			'images/gallery/photos/015.jpg',
+			'images/gallery/photos/016.jpg',
+			'images/gallery/photos/017.jpg',
+			'images/gallery/photos/018.jpg',
+			'images/gallery/photos/019.jpg',
+			'images/gallery/photos/020.jpg',
+			'images/gallery/photos/021.jpg',
+			'images/gallery/photos/022.jpg',
+			'images/gallery/photos/023.jpg',
+			'images/gallery/photos/024.jpg',
+			'images/gallery/photos/025.jpg',
+			'images/gallery/photos/026.jpg',
+			'images/gallery/photos/027.jpg',
+			'images/gallery/photos/028.jpg',
+			'images/gallery/photos/029.jpg',
+			'images/gallery/photos/030.jpg',
+			'images/gallery/photos/031.jpg',
+			'images/gallery/photos/032.jpg',
+			'images/gallery/photos/033.jpg',
+			'images/gallery/photos/034.jpg',
+			'images/gallery/photos/035.jpg',
+			'images/gallery/photos/036.jpg',
+			'images/gallery/photos/037.jpg',
+			'images/gallery/photos/038.jpg',
+			'images/gallery/photos/039.jpg'
+		];
+	})
+
 
 	.controller('WeavingSliderController', function($scope) {
 	  $scope.images = [{
@@ -358,44 +404,3 @@ angular
 	  }
 	});
 
-// function RouteConfig($routeProvider) {
-// 	$routeProvider 
-// 		.when('/', {
-// 			template : 'Nemo Home'
-// 		})
-// 		.when('/intro', {
-// 			template : 'Nemo Intro'
-// 		})
-// 		.when('/angular-test', {
-// 			template : 'Nemo Angular'
-// 		});
-// }
-
-// function NavController() {
-// 	this.homeActive  = true;
-// 	this.introActive = false;
-// 	this.artistActive = false;
-// 	this.artActive = false;
-// 	this.galleryActive = false;
-
-
-// 	this.activate = function(menuActive) {
-// 		this.homeActive  = false;
-// 		this.introActive = false;
-// 		this.artistActive = false;
-// 		this.artActive = false;
-// 		this.galleryActive = false;
-
-// 		if ( menuActive === 'home') {
-// 			this.homeActive = true;
-// 		} else if ( menuActive === 'intro') {
-// 			this.introActive = true;
-// 		} else if ( menuActive === 'activity') {
-// 			this.activityActive = true;
-// 		} else if ( menuActive === 'art') {
-// 			this.artActive = true;
-// 		} else if ( menuActive === 'gallery') {
-// 			this.galleryActive = true;
-// 		}
-// 	};
-// }
