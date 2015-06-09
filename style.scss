@@ -312,6 +312,7 @@
 	width: 28px;
 	height: 28px;
 	background: url(images/slide-ctrl.png) no-repeat 0 0;
+	cursor: pointer;
 	&:hover {
 		background-position: 0 -40px;
 	}

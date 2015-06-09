@@ -520,7 +520,8 @@ p {
   display: inline-block;
   width: 28px;
   height: 28px;
-  background: url(images/slide-ctrl.png) no-repeat 0 0; }
+  background: url(images/slide-ctrl.png) no-repeat 0 0;
+  cursor: pointer; }
   .ico-slide-ctrl:hover, .slick-prev:hover, .slick-next:hover {
     background-position: 0 -40px; }
 
