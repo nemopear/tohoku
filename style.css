@@ -536,4 +536,7 @@ p {
   left: -9999em;
   top: -9999em; }
 
+.text-right {
+  text-align: right; }
+
 /*# sourceMappingURL=style.css.map */
